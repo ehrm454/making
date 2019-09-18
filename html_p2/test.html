@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Anonymous X - #2</title>
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+        div {
+            text-align: center;
+        }
+        #wrapper {
+            width: 100%;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        #wrapper #logo {
+            background-color: #cccccc;
+            height: 150px;
+        }
+        #wrapper #navi {
+            background-color: #00ffff;
+            height: 50px;
+            width: 100%;
+        }
+        #wrapper #contents {
+            background-color: #666666;
+            height: 3000px;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(function(){
+            var menupos = $("#navi").offset().top;
+            $(window).scroll(function(){
+                if($(window).scrollTop() >= menupos) {
+                    $("#navi").css("position","fixed");
+                    $("#navi").css("top","0");
+                } else {
+                    $("#navi").css("position","relative");
+                    $("#navi").css("top","");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+<div id="wrapper">
+
+    <div id="navi">메뉴</div>
+    <div id="contents"> 컨텐츠 </div>
+</div>
+</body>
+</html>
